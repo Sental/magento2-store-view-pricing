@@ -37,4 +37,13 @@
     <preference for="Magento\Catalog\Observer\SwitchPriceAttributeScopeOnConfigChange"
                 type="MagePsycho\StorePricing\Observer\Preference\Catalog\SwitchPriceAttributeScopeOnConfigChange" />
 
+    <type name="Magento\Catalog\Model\Indexer\Product\Price\DimensionCollectionFactory">
+        <arguments>
+            <argument name="dimensionProviders" xsi:type="array">
+                <!-- @see \MagePsycho\StorePricing\Model\Indexer\StoreDimensionProvider::DIMENSION_NAME -->
+                <item name="sv" xsi:type="object">MagePsycho\StorePricing\Model\Indexer\StoreDimensionProvider</item>
+            </argument>
+        </arguments>
+    </type>
+
 </config>

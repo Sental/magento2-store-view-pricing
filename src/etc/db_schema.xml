@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="catalog_product_index_price_store" resource="default" engine="innodb"
+           comment="Catalog Product Price Indexer Temp Table">
+        <column xsi:type="int" name="entity_id" unsigned="true" nullable="false" identity="false"
+                comment="Product ID"/>
+        <column xsi:type="int" name="customer_group_id" unsigned="true" nullable="false" identity="false"
+                default="0" comment="Customer Group ID"/>
+        <column xsi:type="smallint" name="store_id" unsigned="true" nullable="false" identity="false"
+                comment="Store ID"/>
+        <column xsi:type="smallint" name="tax_class_id" unsigned="true" nullable="true" identity="false"
+                default="0" comment="Tax Class ID"/>
+        <column xsi:type="decimal" name="price" scale="6" precision="20" unsigned="false" nullable="true"
+                comment="Price"/>
+        <column xsi:type="decimal" name="final_price" scale="6" precision="20" unsigned="false" nullable="true"
+                comment="Final Price"/>
+        <column xsi:type="decimal" name="min_price" scale="6" precision="20" unsigned="false" nullable="true"
+                comment="Min Price"/>
+        <column xsi:type="decimal" name="max_price" scale="6" precision="20" unsigned="false" nullable="true"
+                comment="Max Price"/>
+        <column xsi:type="decimal" name="tier_price" scale="6" precision="20" unsigned="false" nullable="true"
+                comment="Tier Price"/>
+        <column xsi:type="int" name="id" unsigned="true" nullable="false" identity="true"
+                comment="ID"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+    </table>
+</schema>
